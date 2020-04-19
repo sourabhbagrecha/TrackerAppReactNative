@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Button, Text } from 'react-native-elements';
 import { Context as AuthContext } from '../contexts/AuthContext';
 import Spacer from '../components/Spacer';
+import { FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-navigation';
 
 function AccountScreen(props) {
@@ -24,6 +25,11 @@ function AccountScreen(props) {
     </>  
   )
 };
+
+AccountScreen.navigationOptions = {
+  title: "Account",
+  tabBarIcon: <FontAwesome name="user" size={25} />
+}
 
 const styles = StyleSheet.create({
   signOut: {

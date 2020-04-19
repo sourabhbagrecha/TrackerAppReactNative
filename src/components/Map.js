@@ -6,7 +6,7 @@ import LocationContext from '../contexts/LocationContext';
 
 function Map(props) {
   const {} = props
-  const { state, state: { currentLocation } } = useContext(LocationContext.Context);
+  const { state, state: { currentLocation, locations } } = useContext(LocationContext.Context);
   if(!currentLocation){
     return <ActivityIndicator size="large" style={{marginTop: 200}}/>
   }
@@ -30,13 +30,16 @@ function Map(props) {
         strokeColor="rgba(158, 158, 255, 1.0)"
         fillColor="rgba(158, 158, 255, 0.3)"
       />
+      <Polyline
+        coordinates={locations.map(loc => loc.coords)}
+      />
     </MapView>
   )
 };
 
 const styles = StyleSheet.create({
   mapView: {
-    height: "70%",
+    height: 400,
     width: "100%",
     // marginHorizontal: "5%"
   }
