@@ -35,7 +35,7 @@ function AuthForm(props) {
       <Spacer>
         <Button
           title={buttonText}
-          onPress={() => onSubmit({email, password})}
+          onPress={() => onSubmit({ email, password })}
         />
       </Spacer>
     </>
